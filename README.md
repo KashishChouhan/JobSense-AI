@@ -1,7 +1,9 @@
 AI-Powered-Job-Recommendation-Skill-Gap-Analysis-System:
+
 Smart Career Assistant using NLP + Machine Learning + Django
 
  Overview:
+ 
 This is an AI-powered web application that recommends the best job roles to a user based on their skills. It identifies matching job opportunities, highlights skill gaps, and even provides learning resources to help users become job-ready.
 
 How It Works:
