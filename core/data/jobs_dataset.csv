@@ -1,0 +1,6 @@
+job_id,title,company,location,salary_range,required_skills,experience_required,job_description
+1,Data Analyst,TechCorp,Bangalore,6-8 LPA,"Python, SQL, Power BI, Statistics",1-3 years,"We are looking for a Data Analyst with skills in Python, SQL, Power BI, Statistics."
+2,Machine Learning Engineer,AI Solutions,Hyderabad,10-15 LPA,"Python, TensorFlow, NLP, Deep Learning",2-4 years,"We are looking for a Machine Learning Engineer with skills in Python, TensorFlow, NLP, Deep Learning."
+3,Backend Developer,CodeWorks,Pune,5-7 LPA,"Java, Spring Boot, SQL, Microservices",1-2 years,"We are looking for a Backend Developer with skills in Java, Spring Boot, SQL, Microservices."
+4,Cloud Engineer,CloudNet,Delhi,8-12 LPA,"AWS, Docker, Kubernetes, Python",2-5 years,"We are looking for a Cloud Engineer with skills in AWS, Docker, Kubernetes, Python."
+5,Business Analyst,FinInsights,Mumbai,7-9 LPA,"Excel, SQL, Power BI, Communication",1-3 years,"We are looking for a Business Analyst with skills in Excel, SQL, Power BI, Communication."

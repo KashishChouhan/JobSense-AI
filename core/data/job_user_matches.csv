@@ -1,0 +1,26 @@
+job_id,user_id,match_score,matched_skills,missing_skills,recommended_resources
+1,1,50.0,"SQL, Python","Statistics, Power BI","Learn Statistics - Coursera, Learn Power BI - Coursera"
+1,2,50.0,"Python, Power BI","SQL, Statistics","Learn SQL - Coursera, Learn Statistics - Coursera"
+1,3,25.0,SQL,"Python, Statistics, Power BI","Learn Python - Coursera, Learn Statistics - Coursera, Learn Power BI - Coursera"
+1,4,25.0,Python,"SQL, Statistics, Power BI","Learn SQL - Coursera, Learn Statistics - Coursera, Learn Power BI - Coursera"
+1,5,25.0,SQL,"Python, Statistics, Power BI","Learn Python - Coursera, Learn Statistics - Coursera, Learn Power BI - Coursera"
+2,1,25.0,Python,"TensorFlow, Deep Learning, NLP","Learn TensorFlow - Coursera, Learn Deep Learning - Coursera, Learn NLP - Coursera"
+2,2,25.0,Python,"TensorFlow, Deep Learning, NLP","Learn TensorFlow - Coursera, Learn Deep Learning - Coursera, Learn NLP - Coursera"
+2,3,0.0,None,"TensorFlow, Python, Deep Learning, NLP","Learn TensorFlow - Coursera, Learn Python - Coursera, Learn Deep Learning - Coursera, Learn NLP - Coursera"
+2,4,75.0,"TensorFlow, Python, NLP",Deep Learning,Learn Deep Learning - Coursera
+2,5,0.0,None,"TensorFlow, Python, Deep Learning, NLP","Learn TensorFlow - Coursera, Learn Python - Coursera, Learn Deep Learning - Coursera, Learn NLP - Coursera"
+3,1,25.0,SQL,"Java, Microservices, Spring Boot","Learn Java - Coursera, Learn Microservices - Coursera, Learn Spring Boot - Coursera"
+3,2,0.0,None,"Java, Microservices, SQL, Spring Boot","Learn Java - Coursera, Learn Microservices - Coursera, Learn SQL - Coursera, Learn Spring Boot - Coursera"
+3,3,75.0,"Java, SQL, Spring Boot",Microservices,Learn Microservices - Coursera
+3,4,0.0,None,"Java, Microservices, SQL, Spring Boot","Learn Java - Coursera, Learn Microservices - Coursera, Learn SQL - Coursera, Learn Spring Boot - Coursera"
+3,5,25.0,SQL,"Java, Microservices, Spring Boot","Learn Java - Coursera, Learn Microservices - Coursera, Learn Spring Boot - Coursera"
+4,1,25.0,Python,"AWS, Docker, Kubernetes","Learn AWS - Coursera, Learn Docker - Coursera, Learn Kubernetes - Coursera"
+4,2,25.0,Python,"AWS, Docker, Kubernetes","Learn AWS - Coursera, Learn Docker - Coursera, Learn Kubernetes - Coursera"
+4,3,0.0,None,"AWS, Docker, Python, Kubernetes","Learn AWS - Coursera, Learn Docker - Coursera, Learn Python - Coursera, Learn Kubernetes - Coursera"
+4,4,25.0,Python,"AWS, Docker, Kubernetes","Learn AWS - Coursera, Learn Docker - Coursera, Learn Kubernetes - Coursera"
+4,5,0.0,None,"AWS, Docker, Python, Kubernetes","Learn AWS - Coursera, Learn Docker - Coursera, Learn Python - Coursera, Learn Kubernetes - Coursera"
+5,1,50.0,"SQL, Excel","Communication, Power BI","Learn Communication - Coursera, Learn Power BI - Coursera"
+5,2,25.0,Power BI,"SQL, Excel, Communication","Learn SQL - Coursera, Learn Excel - Coursera, Learn Communication - Coursera"
+5,3,25.0,SQL,"Excel, Communication, Power BI","Learn Excel - Coursera, Learn Communication - Coursera, Learn Power BI - Coursera"
+5,4,0.0,None,"SQL, Excel, Communication, Power BI","Learn SQL - Coursera, Learn Excel - Coursera, Learn Communication - Coursera, Learn Power BI - Coursera"
+5,5,75.0,"SQL, Excel, Communication",Power BI,Learn Power BI - Coursera
