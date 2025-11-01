@@ -5,6 +5,7 @@ Smart Career Assistant using NLP + Machine Learning + Django
 This is an AI-powered web application that recommends the best job roles to a user based on their skills. It identifies matching job opportunities, highlights skill gaps, and even provides learning resources to help users become job-ready.
 
 How It Works:
+
 1️⃣	User enters skills (e.g., “Python, SQL, Power BI”),
 
 2️⃣	NLP cleans and normalizes the skills,
@@ -59,10 +60,15 @@ python manage.py createsuperuser
 python manage.py runserver
 
 Future Enhancements:
+
 🔹 Resume Upload & Automatic Skill Extraction
+
 🔹 Real-time Jobs using LinkedIn/Indeed APIs
+
 🔹 Email Alerts for Best Matches
+
 🔹 User Dashboard to Track Progress
+
 🔹 AI Resume Improvement Suggestions
 
 Contributions are welcome! Feel free to fork this repo, create a pull request, or raise an issue.
