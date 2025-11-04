@@ -1,4 +1,6 @@
-AI-Powered-Job-Recommendation-Skill-Gap-Analysis-System:
+JobSense AI -
+
+AI-powered Job Role Recommendation Based on Skills
 
 Smart Career Assistant using NLP + Machine Learning + Django
 
