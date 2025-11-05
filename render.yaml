@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: job-recommender
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn job_recommender.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: job_recommender.settings
+      - key: PYTHON_VERSION
+        value: 3.10
