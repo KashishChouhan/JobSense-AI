@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4">Job Recommendations</h2>
+
+  {% if recommendations %}
+    <!-- Chart -->
+    <canvas id="skillsChart" class="max-w-md mx-auto mb-6"></canvas>
+
+    <script>
+      const matched = {{ recommendations.0.have|length }};
+      const missing = {{ recommendations.0.missing|length }};
+      const ctx = document.getElementById('skillsChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Matched Skills', 'Missing Skills'],
+          datasets: [{
+            data: [matched, missing],
+            backgroundColor: ['#22c55e', '#ef4444'],
+          }]
+        }
+      });
+    </script>
+
+    <!-- Recommendations -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for rec in recommendations %}
+      <div class="bg-white rounded-xl shadow p-4 hover:shadow-lg transition">
+        <h3 class="font-bold text-lg">{{ rec.job.title }}</h3>
+        <p class="text-gray-600">Match: <span class="font-semibold">{{ rec.score }}%</span></p>
+
+        {% if rec.have %}
+          <p class="text-green-600 text-sm">✅ You have: {{ rec.have|join:", " }}</p>
+        {% endif %}
+
+        {% if rec.missing %}
+          <p class="text-red-600 text-sm">❌ Missing:
+            {% for s, link in rec.missing %}
+              <a href="{{ link }}" target="_blank" class="underline hover:text-blue-600">{{ s }}</a>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-gray-500">No job recommendations found for your skills.</p>
+  {% endif %}
+</div>
+
+{% endblock %}

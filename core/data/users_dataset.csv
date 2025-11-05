@@ -1,0 +1,6 @@
+user_id,name,education,skills,projects,experience_years,desired_role
+1,Aarav,B.Tech CSE,"Python, SQL, Excel","Sales Dashboard, Sentiment Analysis",1,Business Analyst
+2,Meera,B.Sc Statistics,"R, Python, Power BI","Customer Churn, Time Series",2,Data Analyst
+3,Rohan,B.Tech IT,"Java, Spring Boot, SQL","E-commerce Backend, POS System",1,Data Analyst
+4,Isha,B.Tech CSE,"Python, TensorFlow, NLP","Chatbot, Text Classification",2,Cloud Engineer
+5,Kabir,MBA,"Excel, SQL, Communication","Market Analysis, Business Strategy",1,Backend Developer
