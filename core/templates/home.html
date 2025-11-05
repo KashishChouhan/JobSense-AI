@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+  <h2 class="text-2xl font-bold mb-4 text-center">Find Your Dream Job 🚀</h2>
+  <form method="POST" onsubmit="showLoading()">
+    {% csrf_token %}
+    <textarea name="skills_text" rows="4" placeholder="Enter your skills (e.g. Python, SQL, Power BI)"
+      class="w-full border rounded-lg p-3 mb-4 focus:ring focus:ring-blue-300"></textarea>
+    <button type="submit"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg">
+      Find Jobs
+    </button>
+  </form>
+</div>
+
+{% endblock %}
