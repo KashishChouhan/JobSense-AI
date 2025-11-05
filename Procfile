@@ -1,2 +1,1 @@
-web: gunicorn job_recommender_mvp.wsgi
-
+web: gunicorn job_recommender.wsgi
