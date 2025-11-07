@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-from dotenv import load_dotenv
 
-load_dotenv()  # Load variables from .env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,18 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 #  Use environment variable for SECRET_KEY
 SECRET_KEY = os.environ.get('SECRET_KEY', '=c=u@q=)j17#=i43yfo6g*uj*-(2zn$k(7w%9d!+0&=#qzi=d#')
-
-
-
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
-
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 #  Use dynamic ALLOWED_HOSTS for deployment
-ALLOWED_HOSTS = ["*", "onrender.com"]
-
-
-
-
-
+ALLOWED_HOSTS = ['jobsense-ai.onrender.com', 'localhost']
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,19 +72,14 @@ TEMPLATES = [
 WSGI_APPLICATION = 'job_recommender.wsgi.application'
 
 
-# Database
+# Database(Postgres)
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+
     }
-}
-# For Render PostgreSQL
-DATABASES = {
-    'default': dj_database_url.config(default=f"sqlite:///{BASE_DIR}/db.sqlite3")
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -134,9 +118,16 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+# Port for Render
+
+PORT = os.environ.get('PORT', 8000)

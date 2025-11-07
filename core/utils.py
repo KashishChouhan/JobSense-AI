@@ -1,10 +1,26 @@
 import re
 import numpy as np
-from sentence_transformers import SentenceTransformer
 from sklearn.cluster import KMeans
+import torch
+from sentence_transformers import SentenceTransformer
+import threading
 
-# ✅ Load embedding model only once (fast)
-MODEL = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+
+
+# Lazy load the heavy model
+_model = None
+_mODEL_LOCK = threading.Lock()
+def get_model():
+     """Load SentenceTransformer model lazily to save memory."""
+     global _model
+     if _model is None:
+          with _model_LOCK:
+        # Load model on CPU to save memory
+            from sentence_transformers import SentenceTransformer
+            _model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu') #CPU only
+     return _model
+
 
 # Known skills (expandable)
 SKILL_CANONICAL = [
@@ -35,11 +51,10 @@ def jaccard(set1: set, set2: set):
         return 0.0
     return len(set1 & set2) / len(set1 | set2)
 
-def embed_text(text: str):
+def embed_text(text):
     """Convert text into numerical embedding vector using MiniLM."""
-    if not text:
-        return np.zeros((384,))  # default size for MiniLM embeddings
-    return MODEL.encode(text, convert_to_numpy=True)
+    model = get_model()
+    return model.encode(texts)
 
 def cosine_similarity(vec1, vec2):
     """Compute cosine similarity between two vectors safely."""
@@ -63,7 +78,7 @@ def cluster_jobs(jobs, n_clusters=3):
 
     return list(zip(jobs, labels))
 
-# ✅ Learning resources (expandable)
+#  Learning resources (expandable)
 RESOURCE_LINKS = {
     'python': 'https://docs.python.org/3/tutorial/',
     'sql': 'https://www.w3schools.com/sql/',

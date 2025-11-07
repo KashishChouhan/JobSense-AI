@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Job
 from .utils import extract_skills, embed_text, cosine_similarity, cluster_jobs, get_resource
 from django.contrib.auth.decorators import login_required
+from .utils import get_model, extract_skills, embed_text, cosine_similarity
+
+def recommend_jobs(request):
+    model = get_model()   #  Safe lazy load
+
 def home(request):
     """
     Home page where user can enter skills.
